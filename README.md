@@ -26,7 +26,7 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 |:-:|:-:|:-:|:-:|:-:|
 |Frontend|Frontend|Frontend|Backend|Backend|
 |<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/c6cc0882-98bb-4fb2-aa86-a8e9d7682293' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/6f6d62a1-d5cc-4d79-84ee-7cd94e42fc40' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/9d8233a5-d7ae-4232-b296-822f7e44ba69' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/e662d27e-26b0-43cb-805b-3864fd8be002' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/20b3a264-8ef1-4ecd-9e81-4e293aa69fe0' width=100 />|
-|[@hjkim](https://github.com/jhkim)|[@subin1028](https://github.com/subin1028)|[@wwojin](https://github.com/jsm9194)|[@hh8262](https://github.com/hh8262)|[@hokoro](https://github.com/hokoro)|
+|[@hjkim](https://github.com/hjcode00)|[@subin1028](https://github.com/subin1028)|[@wwojin](https://github.com/jsm9194)|[@hh8262](https://github.com/hh8262)|[@hokoro](https://github.com/hokoro)|
 
 
 **AI**
