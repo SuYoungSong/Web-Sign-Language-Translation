@@ -1,4 +1,4 @@
-![76259186](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/d1a4044b-d236-4214-9ef5-b78d71b4a225)## 📖프로젝트 개요
+📖프로젝트 개요
 
 KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 -> 수어를 알파벳으로 번역하는 AI 서비스<br><br>
