@@ -1,0 +1,53 @@
+/*메인 화면*/
+
+/*메인 화면 왼쪽*/
+.main_left{
+    width: 65%;
+    height: 100vh;
+    float: left;
+    background-color: #FFFFDB;
+    box-sizing: border-box;
+}
+
+.main_title{
+    color: #FE7600;
+    margin: 1rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.main_introduce_title{
+    margin: 1rem 1.5rem;
+    color: #FE7600;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 20%;
+}
+.main_introduce_text{
+    margin: 1rem 1.5rem;
+    color: #FE7600;
+    font-size: 25px;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+/*메인 화면 오른쪽*/
+.main_right{
+    width: 35%;
+    height: 100vh;
+    float: right;
+    box-sizing: border-box;
+}
+
+.main_sign_title{
+    text-align: center;
+    margin-top: 50%;
+    padding-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main_sign_button{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.mw-500{
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+}

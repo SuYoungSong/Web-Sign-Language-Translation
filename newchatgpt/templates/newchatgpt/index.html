@@ -1,0 +1,25 @@
+{% load static %}
+{% load bootstrap4 %}
+{% include 'head.html' %}
+
+<body>
+    <div id='chatgpt'>
+        <div id="left-side-bar">
+                <!-- 이전 채팅 내용 목록이 들어가는 자리 -->
+        </div>
+
+        <div id="content">
+            <div id="chat-zone">
+                <!-- GPT와의 채팅이 들어가는 자리 -->
+            </div>
+
+            <div id="message-send-zone">
+                <!-- GPT에게 채팅을 보내는 자리 -->
+                <input type="text" id='gpt-input' placeholder="Message ChatGPT..."/>
+                <input type="button" id="send-chat-button" data-csrf-token="{{ csrf_token }}" value="전송"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

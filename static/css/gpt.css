@@ -1,0 +1,43 @@
+.chat_list_area{
+    width: 20%;
+    height: 100vh;
+    float: left;
+    background-color: #202123;
+    box-sizing: border-box;
+    color: white;
+
+    /*스크롤바 활성 css*/
+    overflow-y: scroll;
+    border: 1px solid #ccc; /* 테두리 스타일 지정 (선택사항) */
+    padding: 10px; /* 안쪽 여백 지정 (선택사항) */
+}
+.chat_list_area::-webkit-scrollbar{
+    width: 12px;
+}
+.chat_list_area::-webkit-scrollbar-thumb{
+    background-color: transparent;
+    border: none;
+}
+
+.question_area{
+    width: 80%;
+    height: 100vh;
+    float: right;
+    background-color: white;
+    box-sizing: border-box;
+    color: black;
+}
+
+.chatgpt_title{
+    font-family: "Roboto", sans-serif;
+    margin: 1rem 0;
+}
+.chatgpt_question_list_title{
+    font-family: "Roboto Mono", sans-serif;
+    padding: 1rem 0;
+}
+.chatgpt_question_title{
+    font-family: "Roboto", sans-serif;
+    color:black;
+    margin: 1rem 0;
+}

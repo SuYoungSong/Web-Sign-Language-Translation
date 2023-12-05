@@ -1,0 +1,35 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body>
+    <div class="text-center mw-500 m-auto">
+        <div class="user_information">
+            <h3 class="user_name">Name : {{ target_user.first_name }}{{ target_user.last_name }}</h3>
+            <h4 class="user_email">Email : {{ target_user.email }}</h4>
+        </div>
+        {% if user == target_user %}
+        <div class="user_button">
+            <a href="{% url 'accountapp:update' pk=target_user.pk %}">
+                <button type="button" class="btn btn-success">
+                        Update
+                </button>
+            </a>
+            <a href="{% url 'accountapp:delete' pk=target_user.pk %}">
+                <button type="button" class="btn btn-danger">
+                        Delete
+                </button>
+            </a>
+        </div>
+        {% endif %}
+        <div class="move_button">
+            <a href="{% url 'main' %}">
+                <button type="button" class="btn btn-dark">
+                        Main Page
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

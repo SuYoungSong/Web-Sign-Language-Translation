@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'head.html' %}
+<body>
+    <div class="main_left">
+        <div class="main_title">
+            <h3>Sign Language</h3>
+        </div>
+        <div class="main_introduce_title">
+            <h2>Hello Users</h2>
+        </div>
+        <div class="main_introduce_text">
+            <p>
+                Our homepage is a homepage that can use both the function of text classification of sign language images and Chatgpt at the same time.
+            </p>
+            <p>
+                If you have any questions or find bugs, please ask Q&A.
+            </p>
+        </div>
+    </div>
+   <div class="main_right">
+        <div class="main_sign_title">
+            <h3>Get Started</h3>
+        </div>
+        <div class="main_sign_button">
+            {% if not user.is_authenticated%}
+                <a href="{% url 'accountapp:login' %}">
+                    <button type="button" class="btn btn-primary">
+                        로그인
+                    </button>
+                </a>
+                <a href="{% url 'accountapp:create' %}">
+                    <button type="button" class="btn btn-primary">
+                        회원가입
+                    </button>
+                </a>
+            {% else %}
+                <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                    <button type="button" class="btn btn-info">
+                        내정보
+                    </button>
+                </a>
+                <a href="{% url 'accountapp:logout' %}">
+                    <button type="button" class="btn btn-info">
+                        로그아웃
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

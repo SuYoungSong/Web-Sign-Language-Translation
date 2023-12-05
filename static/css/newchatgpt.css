@@ -1,0 +1,77 @@
+body {
+    margin : 0;
+    height: 100vh;
+}
+
+/* chatgpt 페이지 사이드바 + 채팅부분 */
+#chatgpt {
+    display:flex;
+    height: 100%;
+}
+
+/* 왼쪽 사이드바 */
+#left-side-bar {
+    background-color: #000000;
+    width: 230px;
+    height: 100%;
+    color:white;
+}
+
+/* 사이드바를 제외한 채팅부분 */
+#content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* 채팅 내역이 있는 공간 */
+#chat-zone {
+    flex: 1;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+}
+
+/* 채팅 메시지를 입력하는 공간 */
+#message-send-zone {
+    display: flex;
+    height: 70px;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 채팅 메세지를 입력하는 공간 중 text input 필드 */
+#gpt-input{
+    width: 80%;
+    height: 50px;
+    justify-content: center;
+}
+
+/* 채팅 메시지를 전송하는 버튼 */
+#send-chat-button{
+    height: 57px;
+}
+
+
+/* 말풍선 전체 설정 */
+.message {
+    max-width: 70%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    clear: both;
+  }
+/* 사용자 채팅 말풍선 */
+.user-message {
+    float: right;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/* GPT 채팅 말풍선 */
+.gpt-message {
+    float: left;
+    background-color: #008CBA;
+    color: white;
+  }

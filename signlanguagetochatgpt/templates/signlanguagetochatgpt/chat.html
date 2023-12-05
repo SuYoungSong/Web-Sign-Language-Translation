@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+<body>
+    <div class="one-box">
+        <form action="chat" method="post" enctype="application/x-www-form-urlencoded">
+            {% csrf_token %}
+            <div id="file-module-0">
+                <label>chatgtp에게 요청하기</label>
+                <textarea id="question" name="question">{{question}}</textarea>
+            </div>
+            <div>
+              <label>응답</label>
+              <span id="result">{{result}}</span>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

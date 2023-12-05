@@ -1,0 +1,22 @@
+.user_information{
+    margin-top: 50%;
+
+}
+
+.user_name{
+    padding: 1rem 0;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+}
+.user_email{
+    padding: 1rem 0;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+}
+
+.user_button{
+    margin: 1rem 0;
+}
+.move_button{
+    margin: 1rem 0;
+}

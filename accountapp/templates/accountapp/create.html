@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'head.html' %}
+<body>
+<div class = "text-center mw-500 m-auto">  <!--bootstrap 에서 제공해주는 class-->
+        <div class = "m-5"> <!--margin 5-->
+            <h4>Sign up</h4>
+        </div>
+        <div class>
+            <form action = "{% url 'accountapp:create' %}" method = "post">
+                {% csrf_token %}
+                {% bootstrap_form form %}  <!--usercreateform 에 형식이 이미 지정이 되있다 가져와서 쓰기만 하면 된다.. 출력 할때는 토큰 두개 사용용-->
+                <div class = "m-5">
+                    <input type = "submit" class="btn btn-dark rounded-pill px-5">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
