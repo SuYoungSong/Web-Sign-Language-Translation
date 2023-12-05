@@ -34,6 +34,6 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 |:-:|:-:|:-:|
 |AI|AI|Infra|
 |<img src='a' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/664bca9b-521b-45f2-a597-3c0766093067' width=100 />|
-|[@grape0957](https://github.com/grape0957) |[@hanaeju](https://github.com/hanaeju)|[@SuYoungSong](https://github.com/SuYoungSong)|
+|[@Ieejayoung](https://github.com/Ieejayoung) |[@hanaeju](https://github.com/hanaeju)|[@SuYoungSong](https://github.com/SuYoungSong)|
 
 
