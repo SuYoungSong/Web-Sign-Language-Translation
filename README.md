@@ -31,8 +31,8 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 **Back-end**
 |설형호|천영성|
 |:-:|:-:|
-|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|
-|[@hokoro](https://github.com/hokoro)| |
+|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/20b3a264-8ef1-4ecd-9e81-4e293aa69fe0' width=100 />|
+| |[@hokoro](https://github.com/hokoro)|
 
 **AI**
 |이자영|한혜주|
