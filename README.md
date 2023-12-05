@@ -20,7 +20,6 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 [ 시연 영상 및 이미지 자리 ]
 
 
-
 <br><br>
 ## 👨‍👩‍👧‍👧팀원
 |김형진|이수빈|전우진|설형호|천영성|
@@ -33,7 +32,7 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹사이트<br>
 |이자영|한혜주|송수영|
 |:-:|:-:|:-:|
 |AI|AI|Infra|
-|<img src='a' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/664bca9b-521b-45f2-a597-3c0766093067' width=100 />|
+|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/afaab16c-5235-4a47-bfb5-777e3fb6094f' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/664bca9b-521b-45f2-a597-3c0766093067' width=100 />|
 |[@Ieejayoung](https://github.com/Ieejayoung) |[@hanaeju](https://github.com/hanaeju)|[@SuYoungSong](https://github.com/SuYoungSong)|
 
 
