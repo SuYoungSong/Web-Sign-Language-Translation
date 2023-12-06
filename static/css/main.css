@@ -181,7 +181,7 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 .info_div{
     display: flex;
     align-items: center;
-    /* margin-top: 100px; */
+    margin-top: 50px;
     margin-left: 100px;
     position: fixed;
 }
