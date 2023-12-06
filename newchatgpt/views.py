@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.postgres.aggregates import ArrayAgg
+
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -23,8 +23,9 @@ def index(request):
     is_exist = ChatUserCount.objects.filter(user=request.user).exists()  # 계정에서 GPT 사용한적이 있는지 여부
     is_refresh = request.headers.get('Cache-Control') == 'max-age=0'  # 새로고침 판단 여부
     result = dict()
-    if is_refresh:
+    if is_refresh and is_exist:
         print('새로고침 상태 이기 떄문에 gpt 의 페이지가 증가하지 않습니다')
+        
         count = ChatUserCount.objects.get(user=request.user).count
         page = ChatRecord.objects.filter(user=request.user).latest('page').page
         # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 있는 경우 -> 현재 카운트 페이지로 gpt 를 사용한적 있다 -> 이전 내용을

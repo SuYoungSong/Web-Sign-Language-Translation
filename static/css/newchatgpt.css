@@ -45,9 +45,18 @@ body {
 #chat-zone {
     /*flex: 1;*/
     /*background-color: #FFFFFF;*/
-    /*overflow-y: auto;*/
+    overflow-y: auto;
+    scrollbar-width: thin; 
     width: 80%;
     margin-bottom: 80px;
+}
+
+#chat-zone::-webkit-scrollbar {
+    width: 0.5rem; /* Chrome 및 Safari에 대한 스크롤바 너비 조절 */
+}
+  
+#chat-zone::-webkit-scrollbar-thumb {
+    background-color: transparent; /* 스크롤바 색상 투명화 */
 }
 
 /* 채팅 메시지를 입력하는 공간 */

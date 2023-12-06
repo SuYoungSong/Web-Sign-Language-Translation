@@ -1,0 +1,75 @@
+/* signchatgpt 페이지에서 newchatgpt.css 파일도 같이 불러와야함. */
+/* signchatgpt페이지와 newchatgpt 페이지에서 중복으로 사용되는 요소는 작성하지 않음. */
+
+
+/* signchatgpt 수어 파일 보내기 버튼 */
+#select-file-button{
+    width: 80%;
+    height: 57px;
+}
+
+/* Modal Styles */
+#myModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#myModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 70%;
+}
+
+#myModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* Button Styles */
+#submitBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #45a049;
+}
+
+/* Dropzone Styles (you may customize this based on your design) */
+#myDropzone {
+    border: 2px dashed #ccc;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+#submitBtn[disabled] {
+    background-color: #555;
+    color: white;
+    cursor: not-allowed;
+}
+
+#submitBtn:hover:not([disabled]) {
+    background-color: #45a049;
+}

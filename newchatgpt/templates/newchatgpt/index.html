@@ -1,7 +1,11 @@
 {% load static %}
 {% load bootstrap4 %}
-<!DOCTYPE html>
-<html lang="en">
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="{% static 'js/chat.js' %}"></script>
+<script src="{% static 'js/newchatgpt.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/newchatgpt.css' %}">
+
 {% include 'head.html' %}
 <body>
     <div id='chatgpt'>
@@ -41,4 +45,3 @@
         </div>
     </div>
 </body>
-</html>

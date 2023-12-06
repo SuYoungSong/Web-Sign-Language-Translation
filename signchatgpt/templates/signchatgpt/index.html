@@ -1,0 +1,50 @@
+{% load static %}
+{% load bootstrap4 %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+
+<script src="{% static 'js/signchatgpt.js' %}"></script>
+<script src="{% static 'js/chat.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/newchatgpt.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/signchatgpt.css' %}">
+
+{% include 'head.html' %}
+
+<body>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <!-- Dropzone을 위한 영역 -->
+            <form action="{% url 'api:signchatgpt' %}" class="dropzone" id="myDropzone" enctype="multipart/form-data">
+                {% csrf_token %}
+            </form>
+            <!-- 전송 버튼 -->
+            <button id="submitBtn">전송하기</button>
+            <!-- 모달창 내용 -->
+            <div id="modal-content"></div>
+        </div>
+    </div>
+    
+    
+    <div id='chatgpt'>
+        <div id="left-side-bar">
+                <!-- 이전 채팅 내용 목록이 들어가는 자리 -->
+        </div>
+
+        <div id="content">
+            <div id="chat-zone">
+                <!-- GPT와의 채팅이 들어가는 자리 -->
+            </div>
+
+            <div id="message-send-zone">
+                <!-- GPT에게 수어 사진 파일을 보내는 자리 -->
+                <input type="button" id="select-file-button" data-csrf-token="{{ csrf_token }}" value="수어로 대화하기" onclick="openModal()" />
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

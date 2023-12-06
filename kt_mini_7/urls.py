@@ -23,8 +23,7 @@ urlpatterns = [
                   path('', homepage, name='main'),
                   path('admin/', admin.site.urls),
                   path('accountapp/', include('accountapp.urls')),
-                  path('chatgpt/',include('chatgpt.urls')),
                   path('api/',include('api.urls')),
                   path('newchatgpt/',include('newchatgpt.urls')),
-                  path('signlanguagetochatgpt',include('signlanguagetochatgpt.urls')),
+                  path('signchatgpt/',include('signchatgpt.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
