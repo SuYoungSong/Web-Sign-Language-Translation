@@ -21,9 +21,7 @@
                         <p>{{ entry.pub_date }}</p>
                         {% for message in entry.message%}
                             <p>
-{#                                <a href="{% url 'api:chatgpt' %}">#}
                                 {{ message.question }}
-{#                                </a>    #}
                             </p>
                         {% endfor %}
                     {% endfor %}
