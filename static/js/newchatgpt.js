@@ -1,3 +1,39 @@
+function show_chat_page(page){
+    // 기존 채팅 내역 클리어
+    $('#chat-zone').empty();
+
+    postData = {
+        csrfmiddlewaretoken: $('#send-chat-button').data('csrf-token'),
+        'page':page,
+    }
+
+    // 내용 요청
+    $.ajax({
+        type: 'POST',
+        url: '/api/get_previous_chat/',
+        data: postData,
+        dataType: 'json',
+        success: function(response) {
+            
+            console.log(response)
+            for(var i=0 ; i < response.message.length ; i++ ){
+                $('#chat-zone').append('<div class="message user-message">' + response.message[i].user + '</div>');
+                $('#chat-zone').append('<div class="message gpt-message">' + response.message[i].gpt + '</div>');
+            }
+            
+            // $('#chat-zone').append('<div class="message gpt-message">' + response.result + '</div>');
+            $('#chat-zone').scrollTop($('#chat-zone')[0].scrollHeight);
+        },
+        error: function(error) {
+            console.error('Error:', error);
+            $('#chat-zone').append('<div class="message gpt-message">' + "채팅 내역 불러오기 실패" + '</div>');
+            $('#chat-zone').scrollTop($('#chat-zone')[0].scrollHeight);
+        }
+    });
+}
+
+
+
 $(document).ready(function() {
     $('#gpt-input, #send-chat-button').on('keyup click', function(event) {
         if (

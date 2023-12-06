@@ -94,16 +94,22 @@ def sign_chat_gpt_answer(request):
 
 def get_previous_message(request):
     if request.method == 'POST':
-        count = ChatUserCount.objects.get(user=request.user).count
-        print(count)
-        user_record = ChatRecord.objects.filter(user=request.user, page=count).order_by('-pub_date')
+        # count = ChatUserCount.objects.get(user=request.user).count
+        # print(count)
+        user_record = ChatRecord.objects.filter(user=request.user, page=request.POST['page']).order_by('-pub_date')
         question = list(user_record.values('question'))
         answer = list(user_record.values('answer'))
-        print(f'질문: {question}')
-        print(f'답변: {answer}')
-        message = [{'question': question, 'answer': answer}]
+        
+        result_chat = []
+        for q,a in zip(question, answer):
+            result_chat.append({
+                'user':q['question'],
+                'gpt':a['answer'],
+            })
 
-        return JsonResponse({'message': message})
+        # message = [{'question': question, 'answer': answer}]
+
+        return JsonResponse({'message': result_chat})
 
     else:
         return JsonResponse({'error': 'Invalid request method'})

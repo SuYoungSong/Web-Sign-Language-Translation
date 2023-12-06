@@ -20,9 +20,11 @@
                     {% for entry in result %}
                         <p>{{ entry.pub_date }}</p>
                         {% for message in entry.message%}
+                            <div class='chat_page' onclick="show_chat_page({{message.page}})">
                             <p>
-                                {{ message.question }}
+                                {{ message.question }} 
                             </p>
+                            </div>
                         {% endfor %}
                     {% endfor %}
                 {% else %}
