@@ -61,18 +61,22 @@ def index(request):
     result = dict()
     if is_refresh and is_exist:
         print('새로고침 상태 이기 떄문에 gpt 의 페이지가 증가하지 않습니다')
+        is_exist_record = ChatRecord.objects.filter(user=request.user).exists()
+        if is_exist_record:
+            count = ChatUserCount.objects.get(user=request.user).count
+            page = ChatRecord.objects.filter(user=request.user).latest('page').page
+            result = chat_history(user=request.user)
+            # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 있는 경우 -> 현재 카운트 페이지로 gpt 를 사용한적 있다 -> 이전 내용을
+            # 불러온다
+            if page == count:
+                print('이전 내용이 있는 상태에서 새로고침 했기때문에 이전 내용을 띄워줍니다.')
 
-        count = ChatUserCount.objects.get(user=request.user).count
-        page = ChatRecord.objects.filter(user=request.user).latest('page').page
-        result = chat_history(user=request.user)
-        # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 있는 경우 -> 현재 카운트 페이지로 gpt 를 사용한적 있다 -> 이전 내용을
-        # 불러온다
-        if page == count:
-            print('이전 내용이 있는 상태에서 새로고침 했기때문에 이전 내용을 띄워줍니다.')
-
-        # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 없는 경우 -> 현재 카운트 페이지에서 그냥 새로고침 했다 -> 이전 데이터 가없다.
+            # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 없는 경우 -> 현재 카운트 페이지에서 그냥 새로고침 했다 -> 이전 데이터 가없다.
+            else:
+                print("첫 화면에서 새로고침 이라 이전 대화 내용이 없습니다")
         else:
-            print("첫 화면에서 새로고침 이라 이전 대화 내용이 없습니다")
+            return render(request,'newchatgpt/index.html')
+
     else:
         if is_exist:
             print('gpt 사용기록이 존재합니다 새로운 페이지 입니다')
