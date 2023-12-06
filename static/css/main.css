@@ -141,23 +141,24 @@ main {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
-    background-color: #1f7a8c;
-    color: #ffffff;
-    border: 1px solid #1f7a8c;
+    background-color: hwb(41 84% 8%);
+    color: rgb(80, 75, 62);
+    border: 1px solid hwb(41 84% 8%);
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
     width: 350px;
-    height: 350px;
+    height: 320px;
     text-align: center;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px rgb(80, 75, 62);
     text-decoration: none;
     margin: 0 auto;
     /* color: inherit; */
 }
 .link:hover {
-background-color: #022b3a;
-box-shadow: none;
+background-color: hwb(39 91% 0%);
+color: rgb(80, 75, 62);
+box-shadow: 3px 3px 3px rgb(80, 75, 62);
 }
 #link_up:hover #gpt_img{
     animation: rotate_image 2s linear infinite;
@@ -175,12 +176,12 @@ box-shadow: none;
 }
 .chatgpt-button-div{
     position: fixed;
-    margin-top: 100px;
+    margin-top: 90px;
     margin-left: 25px;
 }
 .signchatgpt-button-div{
     position: fixed;
-    margin-top: 500px;
+    margin-top: 450px;
     margin-left: 25px;
 }
 .info_div{
@@ -191,6 +192,12 @@ box-shadow: none;
     margin: 10px;
     
     font-size: 20px;
+
+    text-decoration: none;
+    color: inherit;
+}
+.info:hover{
+    color: rgb(248, 244, 241);
 }
 .info_div{
     margin-right: 50px;;
