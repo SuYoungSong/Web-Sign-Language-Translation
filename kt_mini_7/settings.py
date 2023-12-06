@@ -34,7 +34,9 @@ while True:
 SECRET_KEY = env_list['SECRET_KEY']
 GPT_KEY = env_list['GPT_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
+DEBUG_PROPAGATE_EXCEPTIONS = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -63,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'kt_mini_7.middleware.CustomErrorPagesMiddleWare',
 ]
 
 ROOT_URLCONF = 'kt_mini_7.urls'

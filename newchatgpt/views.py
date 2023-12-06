@@ -55,7 +55,8 @@ def chat_history(user):
 
     return result
 
-@login_required(login_url='/accountapp/login/')  # 비로그인시 login 페이지로 추방
+
+@login_required(login_url=reverse_lazy('accountapp:login'),redirect_field_name='next')  # 비로그인시 login 페이지로 추방
 def index(request):
     is_exist = ChatUserCount.objects.filter(user=request.user).exists()  # 계정에서 GPT 사용한적이 있는지 여부
     is_refresh = request.headers.get('Cache-Control') == 'max-age=0'  # 새로고침 판단 여부
@@ -76,7 +77,7 @@ def index(request):
             else:
                 print("첫 화면에서 새로고침 이라 이전 대화 내용이 없습니다")
         else:
-            return render(request,'newchatgpt/index.html')
+            return render(request, 'newchatgpt/index.html')
 
     else:
         if is_exist:
