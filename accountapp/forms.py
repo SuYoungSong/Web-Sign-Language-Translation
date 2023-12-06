@@ -1,32 +1,33 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomAuthenticationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].label = '아이디'
+
+
 class CustomUserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True,
-                             help_text='본인의 이메일을 입력해주세요.')  # required = 빈칸 허용 여부  /  help_text = 필드에 대한 설명
-    first_name = forms.CharField(max_length=30, required=True,
-                                 help_text='본인의 이름의 성을 입력해주세요.')  # max_length = 최대길이 설정
-    last_name = forms.CharField(max_length=30, required=True, help_text='본인의 이름을 입력해주세요.')
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].label = '아이디'
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email') + UserCreationForm.Meta.fields
+        fields = UserCreationForm.Meta.fields
 
     def save(self, commit=True):
         user = super().save(commit=False)  # super -> 부모 클래스 를 가리킨다  그러면 UserCreationForm 에 save 함수를 여기에 사용하는것이다.
-        user.email = self.cleaned_data['email']  # cleaned_data = 유효성 검사를 끝마친 데이터들
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
         if commit:
             user.save()
         return user
 
 
 class CustomUserUpdateForm(UserChangeForm):
-    first_name = forms.CharField(max_length=30, required=True, help_text='변경할 본인의 이름의 성을 입력해주세요.')
-    last_name = forms.CharField(max_length=30, required=True, help_text='변경할 본인의 이름을 입력해주세요.')
 
     password = forms.CharField(
         label="변경할 비밀번호",
@@ -50,12 +51,11 @@ class CustomUserUpdateForm(UserChangeForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email')
+        fields = ['username']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].disabled = True
-        self.fields['email'].disabled = True
 
     # def clean_email(self):
     #     email = self.cleaned_data.get('email')
