@@ -16,6 +16,11 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹 사이트<br
 ![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/8791115d-f37f-4c09-9cb9-d0b10b6e6fec)
 <br>
 
+메인 페이지 일부 수정했습니다.
+
+https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/36a1440f-1109-415a-b3f3-47c038ad9264
+
+
 ## 🖼프로젝트 시연
 [ 시연 영상 및 이미지 자리 ]
 
