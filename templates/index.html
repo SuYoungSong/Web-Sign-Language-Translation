@@ -1,0 +1,121 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+{% include 'head.html' %}
+
+<body>
+    <main>
+        <div class='left_container'>
+            <div class='left_text'>
+                <p class='top_topic'>Sign Language Translation</p>
+                <p>딥러닝 기반 수어 번역 솔루션 제공</p>
+
+                <div class='topic'>
+                    <span>
+                        <h >수어가 뭐죠??</h>
+                    </span>
+                    <span>
+                    
+                    <img src="static/img/free-icon-question-7018138.png" width='50px' height='50px'>
+                    </span>
+                </div>
+                <span>
+                <p>주로 손, 팔, 몸의 동작, 표정, 시선 등을 이용하여 정보를 전달하며, 
+                    발음이나 청취가 불가능한 상황에서 사용됩니다. 수어는 각 국가나 지역에 
+                    따라 다양한 수어가 존재하며, 이는 해당 지역의 언어나 문화와 밀접한 
+                    관련이 있습니다. 
+                <p>
+                    현재 청각장애인을 위해 만들어진 단어는 한국수어사전에 등재된 표제어 
+                    기준으로 모두 2만2884개에 이른다. 이 중 일상생활에서 사용하는 일상어가
+                    1만2587개이고 전문어가 1만297개다. 표준국어대사전에 실려 있는 우리말 
+                    단어가 약 42만개에 이르는 것과 비교하면 우리말 단어의 약 5.4%밖에 안 되
+                    는 단어를 시각화해서 사용하고 있는 것입니다.
+                </p>
+                </span>
+                <div class='left_img'>
+                    <img src="static/img/hand_img.jfif" width="700px" height="300px" >
+                </div>
+
+                <div class='topic'>
+                    <h >수어에 대한 오해</h>
+                </div>
+                <p>※ 수어는 만국 공통어다??</p>
+                <p>각 나라나 지역의 수어는 해당 지역의 언어와 문화에 근거하여 발전하므로, 미국 수어와 한국 수어는 다를 수 있습니다. 각 나라의 수어는 독립적으로 발전하며, 서로의 언어적 특성을 반영합니다.</p>
+                <p>※ 수어는 청각 장애자들 간의 전용 언어다?</p>
+                <p>어는 청각 장애자들 간의 소통뿐만 아니라, 청각 장애자와 비장애인 간의 소통에도 사용됩니다. 이는 수어가 효과적이고 풍부한 의사소통 수단으로 인식되고 있기 때문입니다.</p>
+                
+
+                <div class='topic'>
+                    <h >수화/수어 같은 말일까요?</h>
+                </div>
+                <p>수어는 '수화 언어'의 줄임말로써 전통적으로 수화라고 많이 쓰였지만
+                    수화 기본법 제정을 위한 논의에서 수화는 언어의 의미가 많이 담겨져 있지 않다는 지적을 받았습니다.
+                </p>
+                <p>그래서 다수의 의견대로 '수어'를 쓰자는 의견이 나와 받아들여졌으나 관습대로 수화를 쓰자는 의견도 존중해
+                    '수화'에 '언어'를 붙여 '수화 언어', 이를 줄여 '수어' 라고 용어가 정립되었습니다. 
+                </p>
+
+                <div class='topic'>
+                    <span>
+                        <h >알아두면 좋은 수어</h>
+                        
+                    </span>
+                    <span>
+                        <img src="static/img/free-animated-icon-language-11935068.png" width='50px' height='50px'>
+                    </span>
+                </div>
+                <div>
+                    <span><img src="static/img/99D0D33E5EA0078630.png" width='350px' height='350px'></span>
+                    <span class='right_img'><img src="static/img/99FACF405EA007EB31.png" width='350px' height='350px'></span>
+                    <span ><img class='under_img' src="static/img/991E47355EA007902A.png" width='350px' height='350px'></span>
+                    <span class='right_img' ><img class='under_img' src="static/img/99FBD2415EA007F62B.png" width='350px' height='350px'></span>
+                </div>
+
+                <div class='topic'>
+                    <h >사용한 기술</h>
+                </div>
+                
+                <div class='topic'>
+                    <h >팀원 소개</h>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} 오른쪽 전체 {% endcomment %}
+        <div class='right_container'>
+            <div class='info_div'>
+                {% if not user.is_authenticated%}
+                    <a class='info' href="{% url 'accountapp:login' %}">로그인</a>
+                    <a class='info' href="{% url 'accountapp:create' %}">회원가입</a>
+                {% else %}
+                    <a class='info' href="{% url 'accountapp:detail' pk=user.pk %}">
+                            내정보
+                    </a>
+                    <a class='info' href="{% url 'accountapp:logout' %}">
+                            로그아웃
+                    </a>
+                {% endif %}
+            </div>
+            {% comment %} 위에버튼 {% endcomment %}
+            <div>
+                    <a href="/newchatgpt/" class='link' id='link_up'>
+                        ChatGPT API 사용
+                        <div>
+                            <img id=gpt_img src="\static\img\free-icon-chat-gpt-11865338.png" width="250px" height="250px"/>
+                        </div>
+                    </a>
+            </div>
+            {% comment %} 아래버튼 {% endcomment %}
+            <div >
+                <a href="/signchatgpt/" class='link'>
+                       수어로 ChatGPT 해보기
+                       <div>
+                            <img src="\static\img\free-icon-sign-language-3031573.png" width="250px" height="250px"/>
+                       </div>
+                       
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

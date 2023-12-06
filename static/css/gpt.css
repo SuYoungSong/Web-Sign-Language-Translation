@@ -29,15 +29,12 @@
 }
 
 .chatgpt_title{
-    font-family: "Roboto", sans-serif;
     margin: 1rem 0;
 }
 .chatgpt_question_list_title{
-    font-family: "Roboto Mono", sans-serif;
     padding: 1rem 0;
 }
 .chatgpt_question_title{
-    font-family: "Roboto", sans-serif;
     color:black;
     margin: 1rem 0;
 }

@@ -17,10 +17,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from kt_mini_7.views import homepage
+from kt_mini_7.views import *
 
 urlpatterns = [
-                  path('', homepage, name='main'),
+                  path('', index, name='main'),
                   path('admin/', admin.site.urls),
                   path('accountapp/', include('accountapp.urls')),
                   path('api/',include('api.urls')),

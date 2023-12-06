@@ -5,12 +5,12 @@
 
 .user_name{
     padding: 1rem 0;
-    font-family: 'Roboto Mono', sans-serif;
+    
     font-weight: bold;
 }
 .user_email{
     padding: 1rem 0;
-    font-family: 'Roboto Mono', sans-serif;
+    
     font-weight: bold;
 }
 
