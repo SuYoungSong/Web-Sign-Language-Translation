@@ -81,7 +81,7 @@ def sign_chat_gpt_answer(request):
         ## ChatRecord 에 저장
         user_count = ImageCount.objects.get(user=request.user).count
         ImageRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
-                                  user=request.user)
+                                   user=request.user)
 
         return JsonResponse(payload)
     else:
@@ -99,12 +99,12 @@ def get_previous_message(request):
         user_record = ChatRecord.objects.filter(user=request.user, page=request.POST['page']).order_by('-pub_date')
         question = list(user_record.values('question'))
         answer = list(user_record.values('answer'))
-        
+
         result_chat = []
-        for q,a in zip(question, answer):
+        for q, a in zip(question, answer):
             result_chat.append({
-                'user':q['question'],
-                'gpt':a['answer'],
+                'user': q['question'],
+                'gpt': a['answer'],
             })
 
         # message = [{'question': question, 'answer': answer}]
