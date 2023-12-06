@@ -1,3 +1,48 @@
+function show_chat_page(page){
+    var allChatPages = document.querySelectorAll('.chat_page');
+        allChatPages.forEach(function(chatPage) {
+            chatPage.classList.remove('chat-active');            
+        });
+
+    var activeChat = document.getElementById('page_'+page);
+    activeChat.classList.add('chat-active');
+
+    // 기존 채팅 내역 클리어
+    $('#chat-zone').empty();
+
+    postData = {
+        'page':page,
+    }
+    // CSRF 토큰 가져오기
+    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+
+    // 내용 요청
+    $.ajax({
+        type: 'POST',
+        url: '/api/sign_get_previous_message/',
+        data: postData,
+        headers: {
+            "X-CSRFToken": csrftoken
+        },
+        dataType: 'json',
+        success: function(response) {
+            for(var i=0 ; i < response.message.length ; i++ ){
+                $('#chat-zone').append('<div class="message user-message">' + response.message[i].user + '</div>');
+                $('#chat-zone').append('<div class="message gpt-message">' + response.message[i].gpt + '</div>');
+            }
+            
+            // $('#chat-zone').append('<div class="message gpt-message">' + response.result + '</div>');
+            $('#chat-zone').scrollTop($('#chat-zone')[0].scrollHeight);
+        },
+        error: function(error) {
+            console.error('Error:', error);
+            $('#chat-zone').append('<div class="message gpt-message">' + "채팅 내역 불러오기 실패" + '</div>');
+            $('#chat-zone').scrollTop($('#chat-zone')[0].scrollHeight);
+        }
+    });
+}
+
+
 // Dropzone 초기화
 Dropzone.autoDiscover = false; // 자동 초기화 비활성화
 

@@ -31,7 +31,26 @@
     
     <div id='chatgpt'>
         <div id="left-side-bar">
+            <a href="{% url 'signchatgpt:index' %}">
+                <div class='new-chat'>+ 새로운 채팅</div>
+            </a>
+            <div>
+                {% if result %}
+                    {% for entry in result %}
+                        <p class='subtitle_date'>{{ entry.pub_date }}</p>
+                        {% for message in entry.message%}
+                            <div class='chat_page' id='page_{{message.page}}' onclick="show_chat_page({{message.page}})">
+                            <p>
+                                {{ message.question }} 
+                            </p>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    {% comment %} <p>GPT 를 처음 사용하신 유저 입니다.</p> {% endcomment %}
+                {% endif %}
                 <!-- 이전 채팅 내용 목록이 들어가는 자리 -->
+            </div>
         </div>
 
         <div id="content">
@@ -47,4 +66,7 @@
     </div>
 
 </body>
+{% if result %}
+    <script> show_chat_page('{{result.0.message.0.page}}')</script>
+{% endif%}
 </html>

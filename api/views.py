@@ -113,3 +113,26 @@ def get_previous_message(request):
 
     else:
         return JsonResponse({'error': 'Invalid request method'})
+
+
+def sign_get_previous_message(request):
+    if request.method == 'POST':
+        # count = ChatUserCount.objects.get(user=request.user).count
+        # print(count)
+        user_record = ImageRecord.objects.filter(user=request.user, page=request.POST['page']).order_by('-pub_date')
+        question = list(user_record.values('question'))
+        answer = list(user_record.values('answer'))
+
+        result_chat = []
+        for q, a in zip(question, answer):
+            result_chat.append({
+                'user': q['question'],
+                'gpt': a['answer'],
+            })
+
+        # message = [{'question': question, 'answer': answer}]
+
+        return JsonResponse({'message': result_chat})
+
+    else:
+        return JsonResponse({'error': 'Invalid request method'})

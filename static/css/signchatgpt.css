@@ -6,6 +6,15 @@
 #select-file-button{
     width: 80%;
     height: 57px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #d6ccc2;
+    border: none;
+}
+
+#select-file-button:hover{
+    background-color: #b3a690;
 }
 
 /* Modal Styles */
@@ -43,7 +52,7 @@
 
 /* Button Styles */
 #submitBtn {
-    background-color: #4CAF50;
+    background-color: #d6ccc2;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -52,7 +61,7 @@
 }
 
 #submitBtn:hover {
-    background-color: #45a049;
+    background-color: #b3a690;
 }
 
 /* Dropzone Styles (you may customize this based on your design) */
@@ -71,5 +80,5 @@
 }
 
 #submitBtn:hover:not([disabled]) {
-    background-color: #45a049;
+    background-color: #b3a690;
 }
