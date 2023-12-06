@@ -18,6 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from kt_mini_7.views import *
+from django.conf.urls import handler400, handler404, handler500
+
+
+handler400 = bad_request_page
+handler404 = page_not_found_page
+handler500 = server_error_page
 
 urlpatterns = [
                   path('', index, name='main'),

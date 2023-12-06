@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 
@@ -54,7 +55,7 @@ def chat_history(user):
 
     return result
 
-
+@login_required(login_url='/accountapp/login/')  # 비로그인시 login 페이지로 추방
 def index(request):
     is_exist = ChatUserCount.objects.filter(user=request.user).exists()  # 계정에서 GPT 사용한적이 있는지 여부
     is_refresh = request.headers.get('Cache-Control') == 'max-age=0'  # 새로고침 판단 여부
