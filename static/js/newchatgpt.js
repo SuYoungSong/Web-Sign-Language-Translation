@@ -1,21 +1,23 @@
 function show_chat_page(page){
+    console.log(page)
     // 기존 채팅 내역 클리어
     $('#chat-zone').empty();
 
     postData = {
-        csrfmiddlewaretoken: $('#send-chat-button').data('csrf-token'),
         'page':page,
     }
 
+    headers = {
+        'X-CSRFToken': $('#send-chat-button').data('csrf-token'),
+    }
     // 내용 요청
     $.ajax({
         type: 'POST',
         url: '/api/get_previous_chat/',
         data: postData,
+        headers: headers,
         dataType: 'json',
         success: function(response) {
-            
-            console.log(response)
             for(var i=0 ; i < response.message.length ; i++ ){
                 $('#chat-zone').append('<div class="message user-message">' + response.message[i].user + '</div>');
                 $('#chat-zone').append('<div class="message gpt-message">' + response.message[i].gpt + '</div>');
@@ -42,9 +44,12 @@ $(document).ready(function() {
         ) {
             
             const postData = {
-                csrfmiddlewaretoken: $('#send-chat-button').data('csrf-token'),
                 question: $('#gpt-input').val()
             };
+
+            headers = {
+                'X-CSRFToken': $('#send-chat-button').data('csrf-token'),
+            }
 
             $('#chat-zone').append('<div class="message user-message">' + postData.question + '</div>');
             $('#chat-zone').scrollTop($('#chat-zone')[0].scrollHeight);
@@ -57,6 +62,7 @@ $(document).ready(function() {
                 type: 'POST',
                 url: '/api/chatgpt/',
                 data: postData,
+                headers: headers,
                 dataType: 'json',
                 success: function(response) {
                     $('#chat-zone').append('<div class="message gpt-message">' + response.result + '</div>');
