@@ -1,27 +1,8 @@
 /* FONT */
 /* 폰트 불러오기 */
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-@font-face {
-font-family: 'GmarketSans';
-src: url('../font/GmarketSansTTFLight.ttf') format('truetype');
-font-weight: lighter;
-font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
-@font-face {
-font-family: 'GmarketSans';
-src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
-font-weight: bold;
-font-style: normal;
-}
-  
 * {
-    font-family: 'GmarketSans', sans-serif;
+    font-family: 'Nanum Gothic Coding', sans-serif;
 }
 
