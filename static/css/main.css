@@ -181,7 +181,7 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 .info_div{
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 100px;
     position: fixed;
 }
@@ -189,14 +189,14 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 
 .chatgpt-button-div{
     position: fixed;
-    margin-top: 250px;
+    margin-top: 100px;
     margin-left: 25px;
 }
 
 
 .signchatgpt-button-div{
     position: fixed;
-    margin-top: 650px;
+    margin-top: 450px;
     margin-left: 25px;
 }
 
@@ -299,4 +299,8 @@ main hr {
 
 .header_title{
     margin-bottom: 125px;
+}
+
+.image-zone{
+    margin-left: 30px;
 }
