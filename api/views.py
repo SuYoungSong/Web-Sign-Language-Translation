@@ -10,36 +10,45 @@ from django.utils import timezone
 import string
 
 from newchatgpt.models import ChatRecord, ChatUserCount
+from signchatgpt.models import ImageCount, ImageRecord
 
 client = OpenAI(api_key=settings.GPT_KEY)
 
 
 def chat_gpt(prompt):
     completion = client.chat.completions.create(model="gpt-3.5-turbo",
-                                                    messages=[{"role": "user", "content": prompt}])
+                                                messages=[{"role": "user", "content": prompt}])
     result = completion.choices[0].message.content
-    
+
     payload = {
         'question': prompt,
         'result': result
     }
-    
+
     return payload
+
 
 def chat_gpt_answer(request):
     if request.method == 'POST':
         prompt = request.POST.get('question')
-        return JsonResponse(chat_gpt(prompt))
-    
+
+        payload = chat_gpt(prompt)
+
+        ## ChatRecord 에 저장
+        user_count = ChatUserCount.objects.get(user=request.user).count
+        ChatRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
+                                  user=request.user)
+
+        return JsonResponse(payload)
+
     else:
         # 잘못된 메소드로의 요청에 대한 처리
         return JsonResponse({'error': 'Invalid request method'})
-        
+
 
 def sign_chat_gpt_answer(request):
     if request.method == 'POST' and request.FILES['files']:
         files = request.FILES.getlist('files')
-
 
         # mlflow 로딩
         mlflow_uri = "http://mini7-mlflow.carpediem.so/"
@@ -47,7 +56,6 @@ def sign_chat_gpt_answer(request):
         model_uri = "models:/model_hj/production"
         model = mlflow.tensorflow.load_model(model_uri)
 
-        
         chatGptPrompt = ""
         for idx, file in enumerate(files, start=0):
             class_names = list(string.ascii_lowercase)
@@ -68,17 +76,20 @@ def sign_chat_gpt_answer(request):
             result_str = class_names[pred_1][0]
             chatGptPrompt += result_str
 
-        return JsonResponse(chat_gpt(chatGptPrompt))
+        payload = chat_gpt((chatGptPrompt))
+
+        ## ChatRecord 에 저장
+        user_count = ImageCount.objects.get(user=request.user).count
+        ImageRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
+                                  user=request.user)
+
+        return JsonResponse(payload)
     else:
         # 잘못된 메소드로의 요청에 대한 처리
         return JsonResponse({'error': 'Invalid request method'})
 
 
-
-
-# 
-
-
+#
 
 
 def get_previous_message(request):
