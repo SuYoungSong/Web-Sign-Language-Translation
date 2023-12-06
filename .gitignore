@@ -82,6 +82,8 @@ __pycache__/
 
 media/
 
+db.sqlite3
+
 staticfiles/
 
 .DS_Store
