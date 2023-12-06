@@ -3,7 +3,6 @@ body {
     /*height: 100vh;*/
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
 }
 
 /* chatgpt 페이지 사이드바 + 채팅부분 */
@@ -16,15 +15,64 @@ body {
 
 /* 왼쪽 사이드바 */
 #left-side-bar {
-    /*background-color: #000000;*/
-    /*width: 230px;*/
-    /*height: 100%;*/
-    /*color:white;*/
-    width: 18%;
-    background-color: black;
-    color: white;
-    padding: 20px;
+    width: 200px;
+    background-color: #f5ebe0;
+    /* background-color: #F2F7FF; */
+    color: #847577;
+    /* padding: 20px; */
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: censter;
+}
+
+
+
+#left-side-bar a {
+    text-decoration: none;
+}
+
+
+.new-chat{
+    margin-top: 50px;
+    width: 180px;
+    background-color: #FDF5E6;
+    /* background-color: #e3d5ca; */
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    color: #847577;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.new-chat:hover{
+    background-color: white;
+    /* background-color: #FDF5E6; */
+}
+
+.chat_page {
+    width: 100%;
+    margin-top: 5px;
+    padding-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.subtitle_date{
+    font-size: 12px;
+    color: #717688;
+}
+
+.chat_page:hover{
+    background-color: white;
+    /* background-color: #FDF5E6; */
+}
+
+.chat-active {
+    background-color: #FDF5E6;
 }
 
 /* 사이드바를 제외한 채팅부분 */
@@ -83,14 +131,16 @@ body {
     align-items: center;
     margin-left: auto;
     height: 50px;
+    background-color: #edede9;
     /*width: 80%;*/
     /*height: 50px;*/
     /*justify-content: center;*/
 }
 
+
 /* 채팅 메시지를 전송하는 버튼 */
 #send-chat-button{
-    background-color: #4caf50;
+    background-color: #d6ccc2;
     color: #fff;
     border: none;
     padding: 10px;
@@ -114,7 +164,8 @@ body {
     /*float: right;*/
     /*background-color: #4CAF50;*/
     /*color: white;*/
-    background-color: #4CAF50;
+    background-color: #d6ccc2;
+    /* background-color: #4CAF50; */
     border-radius: 8px;
     padding: 10px;
     color: white;
@@ -141,12 +192,3 @@ body {
     width: auto;
     box-sizing: border-box;
   }
-
-a.new-chat{
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-}
-a.new-chat:hover{
-    color:orange;
-}

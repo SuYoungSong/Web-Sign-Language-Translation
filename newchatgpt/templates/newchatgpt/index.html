@@ -11,16 +11,16 @@
     <div id='chatgpt'>
         <div id="left-side-bar">
             <div>
-                <a href="{% url 'newchatgpt:index' %}" class="new-chat">
-                    New Chat
+                <a href="{% url 'newchatgpt:index' %}">
+                    <div class='new-chat'>+ 새로운 채팅</div>
                 </a>
             </div>
             <div>
                 {% if result %}
                     {% for entry in result %}
-                        <p>{{ entry.pub_date }}</p>
+                        <p class='subtitle_date'>{{ entry.pub_date }}</p>
                         {% for message in entry.message%}
-                            <div class='chat_page' onclick="show_chat_page({{message.page}})">
+                            <div class='chat_page' id='page_{{message.page}}' onclick="show_chat_page({{message.page}})">
                             <p>
                                 {{ message.question }} 
                             </p>
@@ -28,7 +28,7 @@
                         {% endfor %}
                     {% endfor %}
                 {% else %}
-                    <p>GPT 를 처음 사용하신 유저 입니다.</p>
+                    {% comment %} <p>GPT 를 처음 사용하신 유저 입니다.</p> {% endcomment %}
                 {% endif %}
             </div>
         </div>

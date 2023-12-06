@@ -1,5 +1,13 @@
+
 function show_chat_page(page){
-    console.log(page)
+    var allChatPages = document.querySelectorAll('.chat_page');
+        allChatPages.forEach(function(chatPage) {
+            chatPage.classList.remove('chat-active');            
+        });
+
+    var activeChat = document.getElementById('page_'+page);
+    activeChat.classList.add('chat-active');
+
     // 기존 채팅 내역 클리어
     $('#chat-zone').empty();
 
