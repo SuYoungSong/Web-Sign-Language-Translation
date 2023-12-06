@@ -107,6 +107,12 @@ main {
         box-shadow: 3px 3px 3px black;
         font-weight: bold;
         }
+        #gpt_img{
+            margin-top: 30px;
+        }
+        #sign_gpt_img{
+            margin-top: 30px;
+        }
         .link:hover {
         background-color: #022b3a;
         box-shadow: none;
@@ -170,38 +176,40 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
         transform: rotate(360deg);
     }
 }
+
+
 .info_div{
+    display: flex;
+    align-items: center;
+    /* margin-top: 100px; */
     margin-left: 100px;
     position: fixed;
 }
+
+
 .chatgpt-button-div{
     position: fixed;
-    margin-top: 90px;
+    margin-top: 250px;
     margin-left: 25px;
 }
+
+
 .signchatgpt-button-div{
     position: fixed;
-    margin-top: 450px;
+    margin-top: 650px;
     margin-left: 25px;
 }
-.info_div{
-    margin-top: 1rem;
-}
+
+
 .info{
     float: right;
     margin: 10px;
-    
     font-size: 20px;
-
     text-decoration: none;
     color: inherit;
 }
 .info:hover{
     color: rgb(248, 244, 241);
-}
-.info_div{
-    margin-right: 50px;;
-    float: rigth;
 }
 
 
@@ -213,10 +221,13 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
     margin-top: 30px;
 }
 .topic {
+    display: flex;
     font-size: 50px;
     font-weight: bolder;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     margin-bottom: 30px;
+    align-items: center;
+    flex-direction: column;
 }
 
 .left_text{
@@ -230,4 +241,62 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 }
 .under_img{
     margin-top:50px;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+
+.team_self{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.team-self-image{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+
+.team_self-name{
+    text-align: center;
+}
+
+.main_content_image{
+    width: 550px;
+}
+
+.main_title_text{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.sub_title_text{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+main hr {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.header_title{
+    margin-bottom: 125px;
 }
