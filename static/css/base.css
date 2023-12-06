@@ -1,9 +1,13 @@
 /* FONT */
 /* 폰트 불러오기 */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
-
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
-    font-family: 'Nanum Gothic Coding', sans-serif;
+  font-family: 'BMJUA', Arial, sans-serif; 
 }
 
 .mw-500{
