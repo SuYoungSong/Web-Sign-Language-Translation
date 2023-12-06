@@ -1,77 +1,143 @@
 body {
-    margin : 0;
-    height: 100vh;
+    /*margin : 0;*/
+    /*height: 100vh;*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 /* chatgpt 페이지 사이드바 + 채팅부분 */
 #chatgpt {
-    display:flex;
-    height: 100%;
+    /*display:flex;*/
+    /*height: 100%;*/
+    display: flex;
+    height: 100vh;
 }
 
 /* 왼쪽 사이드바 */
 #left-side-bar {
-    background-color: #000000;
-    width: 230px;
-    height: 100%;
-    color:white;
+    /*background-color: #000000;*/
+    /*width: 230px;*/
+    /*height: 100%;*/
+    /*color:white;*/
+    width: 18%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 /* 사이드바를 제외한 채팅부분 */
 #content{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*width: 100%;*/
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 65%;
 }
 
 /* 채팅 내역이 있는 공간 */
 #chat-zone {
-    flex: 1;
-    background-color: #FFFFFF;
-    overflow-y: auto;
+    /*flex: 1;*/
+    /*background-color: #FFFFFF;*/
+    /*overflow-y: auto;*/
+    width: 80%;
+    margin-bottom: 80px;
 }
 
 /* 채팅 메시지를 입력하는 공간 */
 #message-send-zone {
-    display: flex;
-    height: 70px;
-    background-color: #FFFFFF;
+    /*display: flex;*/
+    /*height: 70px;*/
+    /*background-color: #FFFFFF;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    bottom: 0;
+    margin-top: 10px;
+    position: fixed;
+    width: 60%;
     align-items: center;
-    justify-content: center;
 }
 
 /* 채팅 메세지를 입력하는 공간 중 text input 필드 */
 #gpt-input{
-    width: 80%;
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-left: auto;
     height: 50px;
-    justify-content: center;
+    /*width: 80%;*/
+    /*height: 50px;*/
+    /*justify-content: center;*/
 }
 
 /* 채팅 메시지를 전송하는 버튼 */
 #send-chat-button{
-    height: 57px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
 }
 
 
 /* 말풍선 전체 설정 */
 .message {
     max-width: 70%;
-    margin: 10px;
     padding: 10px;
     border-radius: 10px;
     clear: both;
-  }
+    margin: 10px 10px 20px;
+}
 /* 사용자 채팅 말풍선 */
 .user-message {
-    float: right;
+    /*float: right;*/
+    /*background-color: #4CAF50;*/
+    /*color: white;*/
     background-color: #4CAF50;
+    border-radius: 8px;
+    padding: 10px;
     color: white;
+    width: auto;
+    max-width: 30%;
+    align-self: flex-end;
+    margin-left: auto;
+    word-wrap: break-word;
+    box-sizing: border-box;
 }
 
 
 /* GPT 채팅 말풍선 */
 .gpt-message {
-    float: left;
-    background-color: #008CBA;
-    color: white;
+    /*float: left;*/
+    /*background-color: #008CBA;*/
+    /*color: white;*/
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 30%;
+    align-self: flex-start;
+    word-wrap: break-word;
+    width: auto;
+    box-sizing: border-box;
   }
+
+a.new-chat{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+a.new-chat:hover{
+    color:orange;
+}

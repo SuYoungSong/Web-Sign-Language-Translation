@@ -1,13 +1,33 @@
 {% load static %}
 {% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
 {% include 'head.html' %}
-
 <body>
     <div id='chatgpt'>
         <div id="left-side-bar">
-                <!-- 이전 채팅 내용 목록이 들어가는 자리 -->
+            <div>
+                <a href="{% url 'newchatgpt:index' %}" class="new-chat">
+                    New Chat
+                </a>
+            </div>
+            <div>
+                {% if result %}
+                    {% for entry in result %}
+                        <p>{{ entry.pub_date }}</p>
+                        {% for message in entry.message%}
+                            <p>
+{#                                <a href="{% url 'api:chatgpt' %}">#}
+                                {{ message.question }}
+{#                                </a>    #}
+                            </p>
+                        {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <p>GPT 를 처음 사용하신 유저 입니다.</p>
+                {% endif %}
+            </div>
         </div>
-
         <div id="content">
             <div id="chat-zone">
                 <!-- GPT와의 채팅이 들어가는 자리 -->
@@ -15,11 +35,10 @@
 
             <div id="message-send-zone">
                 <!-- GPT에게 채팅을 보내는 자리 -->
-                <input type="text" id='gpt-input' placeholder="Message ChatGPT..."/>
-                <input type="button" id="send-chat-button" data-csrf-token="{{ csrf_token }}" value="전송"/>
+                <input type="text" id='gpt-input' placeholder="Type your question..."/>
+                <input type="button" id="send-chat-button" onclick="addUserMessage()" data-csrf-token="{{ csrf_token }}" value="전송"/>
             </div>
         </div>
     </div>
-
 </body>
 </html>
