@@ -182,7 +182,7 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
     display: flex;
     align-items: center;
     margin-top: 15px;
-    margin-left: 100px;
+    margin-left: 85px;
     position: fixed;
 }
 
@@ -306,7 +306,7 @@ main hr {
 }
 
 .logout-btn {
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 .e-zone{
