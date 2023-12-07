@@ -31,13 +31,18 @@ def chat_gpt(prompt):
 def chat_gpt_answer(request):
     if request.method == 'POST':
         prompt = request.POST.get('question')
-
+        page = int(request.POST['page'])
         payload = chat_gpt(prompt)
 
         ## ChatRecord 에 저장
-        user_count = ChatUserCount.objects.get(user=request.user).count
-        ChatRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
-                                  user=request.user)
+        if page == 0:
+            user_count = ChatUserCount.objects.get(user=request.user).count
+            ChatRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
+                                      user=request.user)
+        else:
+            ChatRecord.objects.create(question=payload['question'], answer=payload['result'], page=page,
+                                      user=request.user)
+
 
         return JsonResponse(payload)
 
@@ -49,7 +54,7 @@ def chat_gpt_answer(request):
 def sign_chat_gpt_answer(request):
     if request.method == 'POST' and request.FILES['files']:
         files = request.FILES.getlist('files')
-
+        page = int(request.POST['page'])
         # mlflow 로딩
         mlflow_uri = "http://mini7-mlflow.carpediem.so/"
         mlflow.set_tracking_uri(mlflow_uri)
@@ -79,9 +84,14 @@ def sign_chat_gpt_answer(request):
         payload = chat_gpt((chatGptPrompt))
 
         ## ChatRecord 에 저장
-        user_count = ImageCount.objects.get(user=request.user).count
-        ImageRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
-                                   user=request.user)
+
+        if page == 0:
+            user_count = ImageCount.objects.get(user=request.user).count
+            ImageRecord.objects.create(question=payload['question'], answer=payload['result'], page=user_count,
+                                       user=request.user)
+        else:
+            ImageRecord.objects.create(question=payload['question'], answer=payload['result'], page=page,
+                                       user=request.user)
 
         return JsonResponse(payload)
     else:
