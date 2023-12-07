@@ -1,21 +1,67 @@
-{% load bootstrap4 %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
 <!DOCTYPE html>
 <html lang="en">
     {% include 'head.html' %}
 <body>
-<div class = "text-center mw-500 m-auto">  <!--bootstrap 에서 제공해주는 class-->
+    <div class=middle-box>
         <div class = "m-5"> <!--margin 5-->
-            <h4>Sign up</h4>
+            <h2 class="title-h2">계정을 생성하세요</h2>
         </div>
         <div class>
-            <form action = "{% url 'accountapp:create' %}" method = "post">
+            <form action = "{% url 'accountapp:create' %}" method = "post" class=join>
                 {% csrf_token %}
-                {% bootstrap_form form %}  <!--usercreateform 에 형식이 이미 지정이 되있다 가져와서 쓰기만 하면 된다.. 출력 할때는 토큰 두개 사용용-->
+                {% comment %} {% bootstrap_form form %}  <!--usercreateform 에 형식이 이미 지정이 되있다 가져와서 쓰기만 하면 된다.. 출력 할때는 토큰 두개 사용용--> {% endcomment %}
+                {% comment %} 아이디 {% endcomment %}
+                <div class="inner_text">
+                    <div>
+                        <span class="notranslate">&ZeroWidthSpace;</span>
+                        <svg class="icon-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="PersonOutlineIcon">
+                            <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
+                        </svg>
+                    </div>
+                    <input aria-invalid="false" autocomplete="name" name="fullname" placeholder="아이디" required="" type="text" class="input-area" value="" id="mui-11">
+                    <fieldset aria-hidden="true">
+                        <legend>
+                            <span class="notranslate">&ZeroWidthSpace;</span>
+                        </legend>
+                    </fieldset>
+                </div>
+                {% comment %} 이메일 {% endcomment %}
+                <div class="inner_text">
+                    <div>
+                        <span class="notranslate">&ZeroWidthSpace;</span>
+                        <svg class="icon-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="EmailOutlinedIcon">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path>
+                        </svg>
+                    </div>
+                    <input aria-invalid="false" autocomplete="email" name="loginId" placeholder="이메일" required="" type="email" class="input-area" value="" id="mui-5">
+                    <fieldset aria-hidden="true">
+                        <legend>
+                            <span class="notranslate">&ZeroWidthSpace;</span>
+                        </legend>
+                    </fieldset>
+                </div>
+                {% comment %} 비밀번호 {% endcomment %}
+                <div class="css-1eit3jj">
+                    <div class="inner_text">
+                        <div>
+                            <span class="notranslate">&ZeroWidthSpace;</span>
+                            <svg class="icon-svg" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="LockOutlinedIcon">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+                            </svg>
+                        </div>
+                        <input aria-invalid="false" autocomplete="new-password" id="PasswordTextField-i3oczv1a72j" name="password" placeholder="비밀번호" required="" type="password" spellcheck="false" class="input-area" value="">
+                    </div>
+                </div>
+                <p class="pass_p">영문, 숫자, 특수문자를 조합하여 8자 이상으로 구성해주세요.</p>
                 <div class = "m-5">
-                    <input type = "submit" class="btn btn-dark rounded-pill px-5">
+                    <button type = "submit" class="submit_btn">회원가입</button>
                 </div>
             </form>
         </div>
     </div>
+   
 </body>
 </html>
