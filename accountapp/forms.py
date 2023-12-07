@@ -12,18 +12,6 @@ class CustomAuthenticationForm(AuthenticationForm):
 
 
 class CustomUserCreationForm(UserCreationForm):
-    password1 = forms.CharField(
-        label="비밀번호",
-        strip=False,
-        widget=forms.PasswordInput,
-        required=False,
-    )
-    password2 = forms.CharField(
-        label="비밀번호",
-        strip=False,
-        widget=forms.PasswordInput,
-        required=False,
-    )
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].label = '아이디'
@@ -32,29 +20,8 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = UserCreationForm.Meta.fields
 
-    def clean(self):
-        cleaned_data = super().clean()
-        username = cleaned_data.get('username')
-        password1 = cleaned_data.get('password1')
-        password2 = cleaned_data.get('password2')
-
-        # 새로운 비밀번호가 입력되었는지 확인
-        if password1 and not password2:
-            raise forms.ValidationError("두 번째 비밀번호를 입력하세요.")
-        elif username and password1 and password2.startswith(username):
-            raise forms.ValidationError("사용자 이름과 비밀번호가 유사합니다.")
-        elif len(password1) < 8:
-            raise forms.ValidationError("비밀번호는 8자리 이상이여야 합니다")
-        elif password1.isdigit():
-            raise forms.ValidationError("숫자로만 이루어진 비밀번호는 사용할수 없습니다")
-        elif password1 != password2:
-            raise forms.ValidationError("비밀번호가 일치하지 않습니다.")
-        return cleaned_data
-
     def save(self, commit=True):
         user = super().save(commit=False)  # super -> 부모 클래스 를 가리킨다  그러면 UserCreationForm 에 save 함수를 여기에 사용하는것이다.
-        password = self.cleaned_data.get('password1')
-        user.set_password('password1')
         if commit:
             user.save()
         return user
@@ -99,8 +66,8 @@ class CustomUserUpdateForm(UserChangeForm):
     def clean(self):
         cleaned_data = super().clean()
         username = cleaned_data.get('username')
-        password = cleaned_data.get('password')
-        new_password2 = cleaned_data.get('new_password2')
+        password = cleaned_data.get('password1')
+        new_password2 = cleaned_data.get('password2')
 
         # 새로운 비밀번호가 입력되었는지 확인
         if password and not new_password2:
