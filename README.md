@@ -22,6 +22,11 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹 사이트<br
 **[초기 웹 디자인 설계]**
 ![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/8791115d-f37f-4c09-9cb9-d0b10b6e6fec)
 
+<br>
+
+### [메인페이지]
+![FireShot Capture 015 - KT_SIGN_LANGUAGE - 127 0 0 1](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/caeeb07a-0eb0-4ccd-843a-13755883fc72)
+
 
 <br>
 
