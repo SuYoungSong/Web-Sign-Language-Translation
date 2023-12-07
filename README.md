@@ -10,41 +10,38 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹 사이트<br
 <br>
 
 ## 🧾프로젝트 수행 내용
-[ 각 파트별 수행한 내용  ]
+- Django를 사용하여 웹 프로젝트를 진행하였습니다.
+- MLFlow를 사용하여 모델 서버를 사용하였습니다.
+- AWS를 이용하여 서버를 구축하였습니다.
 
 
 <br>
 
 
 ## 🖼프로젝트 시연
-**[전체적인 틀]**
+**[초기 웹 디자인 설계]**
 ![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/8791115d-f37f-4c09-9cb9-d0b10b6e6fec)
-<br>
-
-### [Main]
-https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/d388bb03-0db3-48cc-b2bb-01560ec56721
 
 
 <br>
 
 ### [회원가입]
-![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/d29f90d7-789b-459e-b2af-4e52567c9f73)
+![register](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/ce5ae013-9244-47ea-953b-7f97377a14cd)
 
 <br>
 
 ### [로그인]
-![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/92e6354b-bea5-466d-be42-f41fd59596f9)
+![login](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/b16cdb3e-2a8e-4269-be30-408a75025218)
 
 <br>
 
 ### [GPT API]
-![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/d81e4cdd-0c99-4c6d-9d98-e207b553b750)
+![chatgpt](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/7c2c63c5-1831-4a83-9b2e-98f18d60bd1d)
 
 <br>
 
 ### [수어 대화 GPT]
-![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/a62f9a1c-e3fb-4206-9c75-0b5793b13808)
-![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/52e32ccc-4b9f-4477-a9ee-5843c3bb4298)
+![imagegpt](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/30e48dc5-a340-4d88-8143-3a34cc39f6b6)
 
 <br>
 
