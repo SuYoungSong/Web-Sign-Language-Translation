@@ -32,7 +32,7 @@ main {
     text-align: center;
     height: 100%;
     margin-left: 30px;
-    width: 400px;
+    width: 300px;
 }
        /* @font-face {
             font-family: 'BMJUA';
@@ -75,7 +75,7 @@ main {
             /* right: 250px; */
             height: 100%;
             margin-left: 30px;
-            width: 400px;
+            width: 350px;
         }
         .info_div{
             margin-left: 100px;
@@ -83,11 +83,11 @@ main {
         }
         .chatgpt-button-div{
             position: fixed;
-            margin-top: 100px;
+            margin-top: 70px;
         }
         .signchatgpt-button-div{
             position: fixed;
-            margin-top: 500px;
+            margin-top: 350px;
         }
 
         /* link가 버튼임 */
@@ -153,8 +153,8 @@ main {
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
-    width: 350px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     text-align: center;
     box-shadow: 3px 3px 3px rgb(80, 75, 62);
     text-decoration: none;
@@ -181,7 +181,7 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 .info_div{
     display: flex;
     align-items: center;
-    margin-top: 27px;
+    margin-top: 15px;
     margin-left: 100px;
     position: fixed;
 }
@@ -189,14 +189,14 @@ box-shadow: 3px 3px 3px rgb(80, 75, 62);
 
 .chatgpt-button-div{
     position: fixed;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-left: 25px;
 }
 
 
 .signchatgpt-button-div{
     position: fixed;
-    margin-top: 450px;
+    margin-top: 400px;
     margin-left: 25px;
 }
 
@@ -306,7 +306,7 @@ main hr {
 }
 
 .logout-btn {
-    margin-left: 60px;
+    margin-left: 30px;
 }
 
 .e-zone{
