@@ -1,0 +1,27 @@
+.form {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    border: 3px solid;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 5%;
+    background-color: #e1e5f2;
+}
+
+
+.form-group{
+    margin-top: 30px;
+}
+
+label{
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+label#delete_label{
+    margin: 0 auto;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}

@@ -2,11 +2,12 @@
 {% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
 {% include 'head.html' %}
 <body>
-    <div class = "text-center mw-500 m-auto login_sector">  <!--bootstrap 에서 제공해주는 class-->
+    <div class = "form">  <!--bootstrap 에서 제공해주는 class-->
         <div class = "m-5"> <!--margin 5-->
-            <h4>Login</h4>
+            <h1>Login </h1>
         </div>
         <div>
             <form action = "{% url 'accountapp:login' %}" method = "post">
