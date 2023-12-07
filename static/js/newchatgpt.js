@@ -50,9 +50,18 @@ $(document).ready(function() {
             (event.type === 'keyup' && event.key === 'Enter' && event.target.id === 'gpt-input') ||
             (event.type === 'click' && event.target.id === 'send-chat-button')
         ) {
-            
+            // chat-active 클래스를 가진 div 요소를 찾습니다.
+            const chatActiveDiv = document.querySelector('.chat-active');
+
+            // chat-active 클래스를 가진 div 요소의 id를 가져옵니다.
+            const id = chatActiveDiv ? chatActiveDiv.id : 0;
+
+            // id에서 ** 부분을 추출합니다.
+            const page_num = id ? id.split('_')[1] : 0;
+
             const postData = {
-                question: $('#gpt-input').val()
+                question: $('#gpt-input').val(),
+                page:page_num,
             };
 
             headers = {
