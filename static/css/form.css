@@ -2,13 +2,49 @@
     max-width: 500px;
     margin: auto;
     text-align: center;
-    border: 3px solid;
     border-radius: 20px;
     padding: 30px;
     margin-top: 5%;
-    background-color: #e1e5f2;
+    background-color: #d6ccc2;
 }
 
+.submit_btn {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    text-transform: uppercase;
+    min-width: 64px;
+    color: black;
+    background-color: #f5ebe0;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0.625rem;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 0.6875rem 1.25rem;
+    line-height: 1.5rem;
+    box-shadow: 2px 2px 2px black;
+}
+
+.submit_btn:hover {
+    background-color: #d5bdaf;
+    box-shadow: none;
+    color: white;
+    }
 
 .form-group{
     margin-top: 30px;
@@ -19,9 +55,9 @@ label{
     margin-left: 10px;
     margin-bottom: 10px;
 }
-
+/* 
 label#delete_label{
     margin: 0 auto;
     margin-left: 10%;
     margin-bottom: 20px;
-}
+} */
