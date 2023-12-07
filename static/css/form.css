@@ -1,3 +1,4 @@
+
 .form {
     max-width: 500px;
     margin: auto;
@@ -6,6 +7,77 @@
     padding: 30px;
     margin-top: 5%;
     background-color: #d6ccc2;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 4rem;
+}
+
+.title-h2 {
+    margin: 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.4;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    display: inline-flex;
+}
+
+.inner_text {
+    font-weight: 500;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: rgb(25, 31, 40);
+    box-sizing: border-box;
+    cursor: text;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 1rem;
+    min-height: 3rem;
+    line-height: 1.7;
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    padding-left: 14px;
+    background-color: rgb(250, 250, 250);
+}
+
+.icon-svg {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+}
+
+.input-area {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    text-overflow: ellipsis;
+    padding: 16.5px 14px 16.5px 0px;
+}
+
+.inner_text input {
+    padding: 1rem 0.75rem;
 }
 
 .submit_btn {
@@ -39,6 +111,17 @@
     line-height: 1.5rem;
     box-shadow: 2px 2px 2px black;
 }
+.css-1eit3jj {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    vertical-align: top;
+    width: 100%;
+}
 
 .submit_btn:hover {
     background-color: #d5bdaf;
@@ -49,15 +132,3 @@
 .form-group{
     margin-top: 30px;
 }
-
-label{
-    float: left;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-/* 
-label#delete_label{
-    margin: 0 auto;
-    margin-left: 10%;
-    margin-bottom: 20px;
-} */
