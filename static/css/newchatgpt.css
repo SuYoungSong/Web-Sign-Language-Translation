@@ -34,7 +34,7 @@ body {
 
 
 .new-chat{
-    margin-top: 50px;
+    margin-top: 25px;
     width: 180px;
     background-color: #FDF5E6;
     /* background-color: #e3d5ca; */
@@ -192,3 +192,11 @@ body {
     width: auto;
     box-sizing: border-box;
   }
+
+
+
+#home-icon{
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 73px;
+}
