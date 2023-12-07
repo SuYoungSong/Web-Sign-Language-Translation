@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    {% if result %}
+    {% if result and new_chat_bool%}
     <script> show_chat_page('{{result.0.message.0.page}}')</script>
     {% endif%}
 </body>

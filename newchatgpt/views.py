@@ -60,6 +60,7 @@ def chat_history(user):
 def index(request):
     is_exist = ChatUserCount.objects.filter(user=request.user).exists()  # 계정에서 GPT 사용한적이 있는지 여부
     is_refresh = request.headers.get('Cache-Control') == 'max-age=0'  # 새로고침 판단 여부
+    new_chat_bool = False
     result = dict()
     if is_refresh and is_exist:
         print('새로고침 상태 이기 떄문에 gpt 의 페이지가 증가하지 않습니다')
@@ -72,7 +73,7 @@ def index(request):
             # 불러온다
             if page == count:
                 print('이전 내용이 있는 상태에서 새로고침 했기때문에 이전 내용을 띄워줍니다.')
-
+                new_chat_bool = True
             # 만약 새로고침을 했는데 ChatUserCount 에 있는 count 값이 Chatrecord 에 page 값에 없는 경우 -> 현재 카운트 페이지에서 그냥 새로고침 했다 -> 이전 데이터 가없다.
             else:
                 print("첫 화면에서 새로고침 이라 이전 대화 내용이 없습니다")
@@ -89,4 +90,4 @@ def index(request):
             # return render(request, 'newchatgpt/index.html', {'result': chat_history(user=request.user)})
         else:
             ChatUserCount.objects.create(user=request.user, count=1)
-    return render(request, 'newchatgpt/index.html', {'result': result})
+    return render(request, 'newchatgpt/index.html', {'result': result , 'new_chat_bool':new_chat_bool})

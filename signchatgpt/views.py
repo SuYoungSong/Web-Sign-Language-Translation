@@ -51,6 +51,7 @@ def chat_history(user):
 def index(request):
     is_exist = ImageCount.objects.filter(user=request.user).exists()
     is_refresh = request.headers.get('Cache-Control') == 'max-age=0'
+    new_chat_bool = False
     result = dict()
 
     if is_refresh and is_exist:
@@ -62,10 +63,11 @@ def index(request):
 
             if page == count:
                 print('이전 내용이 있는 상태에서 새로고침 했기때문에 이전 내용을 띄워줍니다.')
+                new_chat_bool = True
             else:
                 print("첫 화면에서 새로고침이라 이전 대화 내용이 없습니다")
         else:
-            return render(request , 'signchatgpt/index.html')
+            return render(request, 'signchatgpt/index.html')
 
     else:
         if is_exist:
@@ -75,5 +77,5 @@ def index(request):
             user.save()
             result = chat_history(user=request.user)
         else:
-            ImageCount.objects.create(user=request.user , count=1)
-    return render(request, 'signchatgpt/index.html' , {'result':result})
+            ImageCount.objects.create(user=request.user, count=1)
+    return render(request, 'signchatgpt/index.html', {'result': result, 'new_chat_bool': new_chat_bool})

@@ -22,15 +22,6 @@ class UserCreateView(CreateView):
 
 
 has_ownership = [login_required, account_ownership_required]
-@method_decorator(has_ownership, 'get')
-class UserDetailView(DetailView):
-    model = User
-    context_object_name = 'target_user'
-    template_name = 'accountapp/detail.html'
-
-
-
-
 
 @method_decorator(has_ownership, 'get')
 @method_decorator(has_ownership, 'post')
