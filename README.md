@@ -22,8 +22,21 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹 사이트<br
 ### Main
 https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/b1444319-d581-467c-81d6-88e75eec4f8e
 
+### 회원가입
+![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/d29f90d7-789b-459e-b2af-4e52567c9f73)
 
-[모델 성능]
+### 로그인
+![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/92e6354b-bea5-466d-be42-f41fd59596f9)
+
+### GPT API
+![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/d81e4cdd-0c99-4c6d-9d98-e207b553b750)
+
+### 수어 대화 GPT
+![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/a62f9a1c-e3fb-4206-9c75-0b5793b13808)
+![image](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/52e32ccc-4b9f-4477-a9ee-5843c3bb4298)
+
+
+**[모델 성능]**
 
 ![output](https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/98371516/986f2da2-2503-4d37-a9b4-e0b2afc43989)
 
