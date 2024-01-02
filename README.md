@@ -68,6 +68,6 @@ KT AIVLE School 4기 미니프로젝트 7차 : 수화 번역기 웹 사이트<br
 |:-:|:-:|:-:|:-:|
 |Publisher|AI|AI|Infra|
 |<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/c6cc0882-98bb-4fb2-aa86-a8e9d7682293' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/afaab16c-5235-4a47-bfb5-777e3fb6094f' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/54f99bef-4dd9-4a69-be51-da58e0fae9b4' width=100 />|<img src='https://github.com/SuYoungSong/Web-Sign-Language-Translation/assets/80526924/664bca9b-521b-45f2-a597-3c0766093067' width=100 />|
-|[@hjkim](https://github.com/hjcode00)|[@Ieejayoung](https://github.com/Ieejayoung) |[@hanaeju](https://github.com/hanaeju)|[@SuYoungSong](https://github.com/SuYoungSong)|
+|[@hjkim](https://github.com/hjcode00)|[@Ieejayoung](https://github.com/Ieejayoung) |[@hy2jv](https://github.com/hy2jv)|[@SuYoungSong](https://github.com/SuYoungSong)|
 
 
